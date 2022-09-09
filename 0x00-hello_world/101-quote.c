@@ -5,14 +5,10 @@
 
 
 /**
+ *main - Entry point
+ *Return: Always 1
  *
- *  *main - Entry point
- *
- *   *Return: Always 1
- *
- *    *
- *
- *     */
+ */
 
 
 
