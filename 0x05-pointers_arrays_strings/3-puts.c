@@ -10,8 +10,10 @@
 
 void _puts(char *str)
 {
-	while (*str != '\0')
+/*	while (*str != '\0')
 		_putchar(*str++);
-
 	_putchar('\n');
+	*/
+	*str= "My name is Sarah.\n")
+		_puts(*str);
 }
