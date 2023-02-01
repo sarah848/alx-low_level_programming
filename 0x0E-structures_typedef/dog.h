@@ -7,8 +7,6 @@
  * Return: Always 0.
  **/
 
-int main(void){
-
 	struct dog{
 		char* name;
 		float age;
@@ -16,4 +14,13 @@ int main(void){
 	
 	};
 
+	int main(void){
+
+		struct dog dog;
+
+		dog.name = "Poppy";
+		dog.age = "2.1";
+		dog.owner = "Fiona";
+
+	return (0);
 }
