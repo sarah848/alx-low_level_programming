@@ -1,93 +1,62 @@
 #include "main.h"
 
-
-
 /**
- *
- *  * compare - compare head and tail indices for match
- *
- *   * @head: index starting from left of string
- *
- *    * @tail: index starting from right of string, moving backwards
- *
- *     * Return: 1 if palindrome, 0 if not
- *
- *      */
+ * is_palindrome -  sss
+ * @r: string
+ * Return: return something
+ */
 
-
-
-int compare(char *head, char *tail)
-
+int is_palindrome(char *r)
 {
 
+	int i, size, add;
 
+	i = 0;
+	add = 0;
 
-		if (head >= tail)
+	size = _strlen_recursion(r);
 
-					return (1);
+	add = (size % 2 != 0) ? 2 : 1;
 
-			if (*head == *tail)
-
-						return (compare(head + 1, tail - 1));
-
-
-
-				return (0);
-
+	return (evaluate(r, i, size - 1, add));
 }
 
-
-
 /**
- *
- *  * _strlen - find length of string to access last index
- *
- *   * @s: string
- *
- *    * Return: length
- *
- *     */
-
-
-
-int _strlen(char *s)
-
+ * evaluate - compare
+ * @i: i
+ * @size: size
+ * @s: string
+ * @add: addition depending if n is odd or even
+ * Return: return value
+ */
+int evaluate(char *s, int i, int size, int add)
 {
 
+	if (i + add == size  && s[i] == s[size])
+	{
+		return (1);
+	}
 
+	else if (s[i] == s[size])
+	{
+		return (evaluate(s, i + 1, size - 1, add));
+	}
 
-		if (*s == '\0')
-
-					return (0);
-
-			s++;
-
-				return (1 + (_strlen(s)));
-
+	return (0);
 }
 
-
-
 /**
- *
- *  * is_palindrome - check if palindrome
- *
- *   * @s: string to check
- *
- *    * Return: 1 if palindrome, 0 if not
- *
- *     */
+ * _strlen_recursion - legth of a string
+ * @s: string
+ * Return: return legth
+ */
 
-
-
-int is_palindrome(char *s)
-
+int _strlen_recursion(char *s)
 {
+	/*Base condition*/
+	if (!*s)
+		return (0);
 
-		int len = _strlen(s);
-
-
-
-			return (compare(s, (s + len - 1)));
-
+	else
+		return (1 + _strlen_recursion(s + 1)); /*Sum 1*/
 }

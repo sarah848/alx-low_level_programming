@@ -1,65 +1,42 @@
 #include "main.h"
-
-
-
 /**
- *
- *  * find_root - find square root of n, starting from the smallest possible, 0
- *
- *   * @n: n
- *
- *    * @root: test this root
- *
- *     * Return: natural square root, or -1 if not natural root
- *
- *      */
+ *_evaluate - evaluate function sqrt
+ *@i: interger
+ *@n: interger
+ *Return: evaluate sqrt
+ */
 
-
-
-int find_root(int n, int root)
-
+int _evaluate(int i, int n)
 {
+	/*Evaluate function*/
+	if (n == 0 || n == 1)
+		return (n);
 
-		if (root * root > n)
+	else if (i * i < n)
+		return (_evaluate(i + 1, n));
 
-					return (-1);
+	else if (i * i == n) /*Condiction base*/
+		return (i);
 
-
-
-			if (root * root == n)
-
-						return (root);
-
-
-
-				return (find_root(n, root + 1));
-
+	return (-1);
 }
 
-
-
 /**
- *
- *  * _sqrt_recursion - find natural square root of n
- *
- *   * @n: n
- *
- *    * Return: natural square root, or -1 if not natural root
- *
- *     */
-
-
+ *_sqrt_recursion - evaluate sqrt
+ *@n: interger
+ *Return: Sqrt_recursion
+*/
 
 int _sqrt_recursion(int n)
-
 {
+	int i = 0;
 
-		if (n < 0)
+	if (i < 0) /*If n is negative*/
+		return (-1);
 
-					return (-1);
-
-
-
-			return (find_root(n, 0));
+	else
+	{
+		return (_evaluate(i, n)); /*Recursive call*/
+	}
 
 }
